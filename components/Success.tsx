@@ -34,9 +34,9 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
       clone.style.left = '-10000px';
       clone.style.width = '800px';    // Standardized Width
 
-      // Calculate height based on aspect ratio (1448/2048)
-      // 800 * (2048 / 1448) ~= 1131.5
-      clone.style.height = `${(800 * 2048) / 1448}px`;
+      // Calculate height based on aspect ratio (1080/1600)
+      // 800 * (1600 / 1080) ~= 1185.18
+      clone.style.height = `${(800 * 1600) / 1080}px`;
       clone.style.transform = 'none'; // Remove any CSS scaling
       clone.style.margin = '0';
       clone.style.boxShadow = 'none';
@@ -46,7 +46,22 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
       // The snippet specifically sets h2 to 32px
       const nameElement = clone.querySelector('h2');
       if (nameElement) {
-        nameElement.style.fontSize = '32px';
+        // Updated logic: Increase size significantly to match preview visual weight.
+        // Base width 800px -> Font ~64px
+        const nameLength = userData.fullName.length;
+        nameElement.style.fontSize = nameLength > 20 ? '38px' : nameLength > 13 ? '50px' : '64px';
+        nameElement.style.whiteSpace = 'nowrap';
+        nameElement.style.fontWeight = '550';
+        nameElement.style.textAlign = 'center';
+        nameElement.style.fontFamily = '"Montserrat", sans-serif';
+
+        // Fix positioning: Move to center and slightly up (57%) as per user request
+        const nameContainer = nameElement.parentElement;
+        if (nameContainer) {
+          nameContainer.style.width = '100%';
+          nameContainer.style.left = '0';
+          nameContainer.style.top = '59%'; // Adjusted down to 59% based on user feedback
+        }
       }
 
       document.body.appendChild(clone);

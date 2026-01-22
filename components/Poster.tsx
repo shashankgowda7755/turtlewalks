@@ -88,8 +88,9 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
           className="text-black font-bold tracking-wide leading-none w-full text-center"
           style={{
             fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 500,
-            fontSize: (userData.fullName || 'Ram Kumar').length > 13 ? '26px' : '30px'
+            fontWeight: 550,
+            whiteSpace: 'nowrap',
+            fontSize: (userData.fullName || 'Ram Kumar').length > 20 ? '18px' : (userData.fullName || 'Ram Kumar').length > 13 ? '24px' : '30px'
           }}
         >
           {userData.fullName || 'Ram Kumar'}
