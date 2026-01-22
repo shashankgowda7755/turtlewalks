@@ -122,7 +122,7 @@ const App: React.FC = () => {
                 <div className="flex justify-between items-end mb-10">
                   <div>
                     <h2 className="text-3xl md:text-4xl font-display font-bold text-indiaNavy border-b-4 border-indiaGreen inline-block pb-2">
-                      PARTNER<br />INSTITUTIONS
+                      Partner<br />Institutions
                     </h2>
                   </div>
                   <button
@@ -173,7 +173,7 @@ const App: React.FC = () => {
                         </p>
 
                         <div className="w-full py-3.5 bg-stone-900 text-white font-bold text-center rounded-xl text-sm tracking-wide transition-all group-hover:bg-[#1E8F43] group-hover:shadow-lg group-hover:shadow-green-900/20">
-                          Create Tribute
+                          Join the Movement
                         </div>
                       </div>
                     </div>
