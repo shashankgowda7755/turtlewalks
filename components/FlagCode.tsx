@@ -332,38 +332,10 @@ export const FlagCode: React.FC = () => {
                         </div>
                     </section>
 
-                    {/* 6. FAQs */}
-                    <section>
-                        <h3 className="text-2xl font-bold text-indiaNavy mb-8">Frequently Asked Questions</h3>
-                        <div className="grid gap-3">
-                            {FAQS.map((faq, index) => (
-                                <div key={index} className={`border border-stone-200 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-stone-50 ring-1 ring-stone-200' : 'bg-white hover:border-stone-300'}`}>
-                                    <button onClick={() => toggleFAQ(index)} className="w-full flex items-center justify-between p-4 text-left focus:outline-none">
-                                        <span className={`font-semibold text-sm md:text-base ${openIndex === index ? 'text-indiaNavy' : 'text-stone-800'}`}>{faq.question}</span>
-                                        {openIndex === index ? <ChevronUp className="text-indiaNavy shrink-0 ml-4" size={18} /> : <ChevronDown className="text-stone-400 shrink-0 ml-4" size={18} />}
-                                    </button>
-                                    <div className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                        <div className="p-4 pt-0 text-stone-700 text-sm leading-relaxed border-t border-stone-200/50 mt-1">
-                                            {faq.answer}
-                                            <div className="mt-2 text-xs text-stone-400 flex items-center gap-1">
-                                                Source: <a href={faq.link} target="_blank" rel="noreferrer" className="hover:text-blue-600 hover:underline">{faq.source}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* 7. Participation */}
+                    {/* 6. Participation */}
                     <section>
                         <h3 className="text-2xl font-bold text-indiaNavy mb-6">How Schools Can Participate</h3>
                         <div className="bg-[#1c1917] rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                            {/* Watermark subtle effect */}
-                            <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">
-                                <span className="text-[120px] font-bold text-white leading-none tracking-tighter">m</span>
-                            </div>
-
                             <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 relative z-10">
                                 <div className="flex gap-4 items-start">
                                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
@@ -410,6 +382,29 @@ export const FlagCode: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    {/* 7. FAQs */}
+                    <section>
+                        <h3 className="text-2xl font-bold text-indiaNavy mb-8">Frequently Asked Questions</h3>
+                        <div className="grid gap-3">
+                            {FAQS.map((faq, index) => (
+                                <div key={index} className={`border border-stone-200 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-stone-50 ring-1 ring-stone-200' : 'bg-white hover:border-stone-300'}`}>
+                                    <button onClick={() => toggleFAQ(index)} className="w-full flex items-center justify-between p-4 text-left focus:outline-none">
+                                        <span className={`font-semibold text-sm md:text-base ${openIndex === index ? 'text-indiaNavy' : 'text-stone-800'}`}>{faq.question}</span>
+                                        {openIndex === index ? <ChevronUp className="text-indiaNavy shrink-0 ml-4" size={18} /> : <ChevronDown className="text-stone-400 shrink-0 ml-4" size={18} />}
+                                    </button>
+                                    <div className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                        <div className="p-4 pt-0 text-stone-700 text-sm leading-relaxed border-t border-stone-200/50 mt-1">
+                                            {faq.answer}
+                                            <div className="mt-2 text-xs text-stone-400 flex items-center gap-1">
+                                                Source: <a href={faq.link} target="_blank" rel="noreferrer" className="hover:text-blue-600 hover:underline">{faq.source}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </section>
 
