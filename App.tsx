@@ -49,7 +49,22 @@ const App: React.FC = () => {
   useEffect(() => {
     preloadAssets();
     document.title = "My Indian Flag Pledge 🇮🇳";
-  }, []);
+
+    // 🔗 Check for direct school link parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const schoolParam = urlParams.get('school');
+
+    if (schoolParam) {
+      const schools = DB.getSchools();
+      const school = schools.find(s => s.id === schoolParam);
+
+      if (school) {
+        console.log(`📍 Direct link: Navigating to ${school.name}`);
+        setSelectedSchool(school);
+        setTimeout(() => setCurrentStep(Step.UserForm), 100);
+      }
+    }
+  }, [setSelectedSchool]);
 
   // 🚀 Smooth step transition with fade effect
   const goToStep = useCallback((step: Step) => {
