@@ -239,7 +239,6 @@ export const FlagCode: React.FC = () => {
                                         "Handle with clean hands and respect.",
                                         "Never let it touch ground, floor, or water.",
                                         "Fold properly using official method.",
-                                        "Store in a clean, dry place.",
                                         "Keep paper/cloth flags safe; don't leave lying around.",
                                         "Collect and store flags after events."
                                     ].map((item, i) => (
