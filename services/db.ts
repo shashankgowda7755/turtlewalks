@@ -47,19 +47,19 @@ const INITIAL_SCHOOLS: School[] = [
     },
     {
         id: '4',
-        name: "Vales International School",
+        name: "Vaels International School",
         location: "Chennai",
-        subLocation: "Neelankarai",
+        subLocation: "Neelankarai & Injabakkam",
         icon: "🏫",
-        logoUrl: "/assets/VIS_NEELANKARAI_LOGO.jpg",
+        logoUrl: "/assets/vis_logo.png",
         isActive: true,
         isFeatured: true,
         templateId: 'tricolor',
         logoPosition: {
-            left: "8%",
-            top: "83%",
-            width: "70%",
-            height: "10%"
+            left: "18.17%",
+            top: "85.72%",
+            width: "24.46%",
+            height: "4.72%"
         }
     }
 ];
