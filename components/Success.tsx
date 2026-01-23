@@ -123,35 +123,6 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
 
   const handleDownload = async () => {
     setIsProcessing(true);
-
-    // ========================================
-    // SUBMIT TO GOOGLE SHEETS - ONLY ONCE
-    // ========================================
-    if (!hasSubmitted.current && selectedSchool) {
-      hasSubmitted.current = true;
-
-      const studentData = {
-        name: userData.fullName,
-        grade: userData.class,
-        section: userData.section,
-        phone: `${userData.countryCode}-${userData.phone}`,
-        email: userData.email,
-        message: 'I Pledge to honor the National Flag',
-        photoUrl: userData.photo,
-        optIn: userData.optInSimilarEvents
-      };
-
-      try {
-        await DB.submitForm(selectedSchool.id, studentData);
-        console.log("✅ Data submitted to Google Sheets on Download");
-      } catch (e) {
-        console.error("❌ Submission error:", e);
-      }
-    }
-
-    // ========================================
-    // GENERATE AND DOWNLOAD IMAGE
-    // ========================================
     const blob = await generateImageBlob();
     if (blob) {
       const url = URL.createObjectURL(blob);
