@@ -19,7 +19,7 @@ const INITIAL_SCHOOLS: School[] = [
         subLocation: "General Public",
         icon: "🇮🇳",
         logoUrl: "", // Empty in UI
-        posterLogoUrl: "/assets/ezone.png", // Visible in Poster
+        posterLogoUrl: "/assets/ezone_specialist.png", // Visible in Poster
         isActive: true,
         isFeatured: true,
         templateId: 'tricolor'
