@@ -21,6 +21,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       id={id || 'certificate-visual'}
       className={`relative aspect-[1080/1600] bg-white overflow-hidden text-gray-900 mx-auto shadow-sm ${className}`}
     >
+      {console.log('🖼️ Poster Rendered:', { school, userData, logoUrl: school?.logoUrl, photo: userData.photo ? 'Present' : 'Missing' })}
 
       {/* Layer 1: Background Image */}
       <img

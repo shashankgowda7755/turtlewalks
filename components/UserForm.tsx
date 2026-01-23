@@ -173,6 +173,10 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
 
   const handleContinue = async () => {
     if (isFormValid()) {
+      console.log('📝 Form Submission Initiated');
+      console.log('👤 User Data:', userData);
+      console.log('🏫 Selected School:', selectedSchool);
+
       // Create student data object for DB
       const studentData = {
         name: userData.fullName,
