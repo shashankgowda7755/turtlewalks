@@ -158,7 +158,7 @@ export const DB = {
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors', // Required for Google Apps Script
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'text/plain' }, // Using text/plain ensures e.postData.contents is populated without CORS preflight issues
                     body: JSON.stringify(newSubmission)
                 });
                 console.log("✅ Sent to Google Sheets");
