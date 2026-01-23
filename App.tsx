@@ -50,11 +50,11 @@ const App: React.FC = () => {
     preloadAssets();
     document.title = "My Indian Flag Pledge 🇮🇳";
 
-    // 🔗 Check for direct school link parameter
+    // 🔗 Check for direct org link parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const schoolParam = urlParams.get('school');
+    const orgParam = urlParams.get('org');
 
-    if (schoolParam) {
+    if (orgParam) {
       const schools = DB.getSchools();
       const school = schools.find(s => s.id === orgParam);
 
