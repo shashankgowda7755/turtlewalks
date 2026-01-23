@@ -18,7 +18,7 @@ const INITIAL_SCHOOLS: School[] = [
         location: "National",
         subLocation: "General Public",
         icon: "🇮🇳",
-        logoUrl: "", // Placeholder until logo is provided
+        logoUrl: "/assets/ezone.png",
         isActive: true,
         isFeatured: true,
         templateId: 'tricolor'
