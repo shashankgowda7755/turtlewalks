@@ -311,33 +311,6 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
                 />
               </div>
 
-              {/* Class and Section Grid (Optional) */}
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-3 ml-1">
-                    Class
-                  </label>
-                  <input
-                    type="text"
-                    value={userData.class}
-                    onChange={(e) => setUserData({ ...userData, class: e.target.value })}
-                    placeholder="e.g. 10"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-stone-700 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-sky-100 focus:border-sky-400 outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-3 ml-1">
-                    Section
-                  </label>
-                  <input
-                    type="text"
-                    value={userData.section}
-                    onChange={(e) => setUserData({ ...userData, section: e.target.value })}
-                    placeholder="e.g. A"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-stone-700 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-sky-100 focus:border-sky-400 outline-none transition-all"
-                  />
-                </div>
-              </div>
 
               {/* Grid for Contact Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
