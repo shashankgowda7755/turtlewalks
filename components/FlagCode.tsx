@@ -123,6 +123,19 @@ export const FlagCode: React.FC = () => {
                                 <h4 className="font-bold text-stone-900 mb-3">Permitted Materials</h4>
                                 <p className="text-sm text-stone-700 mb-2"><strong>Natural or semi-natural fibres</strong>: Cotton, Polyester, Wool, Silk, Khadi.</p>
                             </div>
+                            <div className="bg-stone-50 p-6 rounded-xl border border-stone-100">
+                                <h4 className="font-bold text-stone-900 mb-3">Correct Ratio</h4>
+                                <p className="text-3xl font-bold text-indiaNavy mb-1">3:2</p>
+                                <p className="text-xs text-stone-500 uppercase tracking-widest font-bold">Length to Width</p>
+                            </div>
+                            <div className="bg-stone-50 p-6 rounded-xl border border-stone-100">
+                                <h4 className="font-bold text-stone-900 mb-3">Standard Sizes</h4>
+                                <ul className="space-y-1 text-sm text-stone-700 font-medium">
+                                    <li>90cm × 60cm</li>
+                                    <li>60cm × 40cm</li>
+                                    <li>30cm × 20cm</li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
 
