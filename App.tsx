@@ -173,7 +173,7 @@ const App: React.FC = () => {
 
                         <p className="text-xs font-bold text-stone-400 uppercase tracking-wider flex items-center gap-1.5 mb-8">
                           <svg className="text-stone-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                          {school.location}
+                          {school.subLocation}, {school.location}
                         </p>
 
                         <div className="w-full py-3.5 bg-stone-900 text-white font-bold text-center rounded-xl text-sm tracking-wide transition-all group-hover:bg-[#1E8F43] group-hover:shadow-lg group-hover:shadow-green-900/20">
