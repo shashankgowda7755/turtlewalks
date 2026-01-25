@@ -203,6 +203,24 @@ const INITIAL_SCHOOLS: School[] = [
             width: "17.76%",
             height: "auto"
         }
+    },
+    {
+        id: 'mercy-school',
+        name: "Mercy School",
+        location: "Coimbatore",
+        subLocation: "",
+        icon: "🏫",
+        logoUrl: "/assets/mercy.jpeg",
+        posterLogoUrl: "/assets/mercy.jpeg",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "28.05%",
+            top: "82.73%",
+            width: "17.76%",
+            height: "auto"
+        }
     }
 ]; // Patrician College added
 
