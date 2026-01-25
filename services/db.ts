@@ -108,9 +108,9 @@ const INITIAL_SCHOOLS: School[] = [
         isFeatured: true,
         templateId: 'tricolor',
         logoPosition: {
-            left: "18.68%",
-            top: "85.93%",
-            width: "26.09%",
+            left: "14.00%",
+            top: "85.80%",
+            width: "32.00%",
             height: "auto"
         }
     },
