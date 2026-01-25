@@ -221,6 +221,60 @@ const INITIAL_SCHOOLS: School[] = [
             width: "17.76%",
             height: "auto"
         }
+    },
+    {
+        id: 'east-west-college',
+        name: "East West College of Engineering",
+        location: "Bangalore",
+        subLocation: "",
+        icon: "🎓",
+        logoUrl: "/assets/eastwest.png",
+        posterLogoUrl: "/assets/eastwest.png",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "31.00%",
+            top: "84.73%",
+            width: "14.00%",
+            height: "auto"
+        }
+    },
+    {
+        id: 'vit-chennai',
+        name: "Vellore Institute of Technology",
+        location: "Chennai",
+        subLocation: "",
+        icon: "🎓",
+        logoUrl: "/assets/vit_logo_colored.png",
+        posterLogoUrl: "/assets/vit_logo_colored.png",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "31.00%",
+            top: "84.73%",
+            width: "14.00%",
+            height: "auto"
+        }
+    },
+    {
+        id: 'mmt',
+        name: "Modern Medical Technologies",
+        location: "Bangalore",
+        subLocation: "",
+        icon: "🏥",
+        logoUrl: "/assets/mmt.png",
+        posterLogoUrl: "/assets/mmt.png",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "31.00%",
+            top: "84.73%",
+            width: "14.00%",
+            height: "auto"
+        }
     }
 ]; // Patrician College added
 
