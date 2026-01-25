@@ -17,7 +17,7 @@ const FAQS = [
     },
 
     {
-        question: "Can students take photos with the flag?",
+        question: "Can citizens take photos with the flag?",
         answer: "Yes, as long as the flag is displayed respectfully and the photos do not mock or insult the flag.",
         source: "thestatesman",
         link: "https://www.thestatesman.com/india/independence-day-2025-tricolour-rules-dos-and-donts-every-indian-must-know-1503470781.html"
@@ -393,7 +393,7 @@ export const FlagCode: React.FC = () => {
                                         <span className="text-white font-bold text-sm">2</span>
                                     </div>
                                     <p className="text-white/90 text-sm md:text-base leading-relaxed">
-                                        <strong className="text-white">Teach Students</strong> the Flag Code and etiquette.
+                                        <strong className="text-white">Teach Everyone</strong> the Flag Code and etiquette.
                                     </p>
                                 </div>
 
@@ -402,7 +402,7 @@ export const FlagCode: React.FC = () => {
                                         <span className="text-white font-bold text-sm">5</span>
                                     </div>
                                     <p className="text-white/90 text-sm md:text-base leading-relaxed">
-                                        <strong className="text-white">Organise Awareness</strong> sessions for students and parents.
+                                        <strong className="text-white">Organise Awareness</strong> sessions for the community.
                                     </p>
                                 </div>
 

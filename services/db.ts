@@ -77,6 +77,60 @@ const INITIAL_SCHOOLS: School[] = [
             width: "7.75%",
             height: "auto"
         }
+    },
+    {
+        id: 'hindustan-uni',
+        name: "Hindustan University",
+        location: "Chennai",
+        subLocation: "",
+        icon: "🎓",
+        logoUrl: "/assets/hindustan_uni.jpg",
+        posterLogoUrl: "/assets/hindustan_uni.jpg",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "30%",
+            top: "86.75%",
+            width: "15%",
+            height: "auto"
+        }
+    },
+    {
+        id: 'hindustan-intl',
+        name: "Hindustan International School",
+        location: "Chennai",
+        subLocation: "",
+        icon: "🏫",
+        logoUrl: "/assets/hindustan_intl.jpg",
+        posterLogoUrl: "/assets/hindustan_intl.jpg",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "30%",
+            top: "86.75%",
+            width: "15%",
+            height: "auto"
+        }
+    },
+    {
+        id: 'kcg-tech',
+        name: "KCG College of Technology",
+        location: "Chennai",
+        subLocation: "",
+        icon: "⚙️",
+        logoUrl: "/assets/kcg_tech.jpg",
+        posterLogoUrl: "/assets/kcg_tech.jpg",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "30%",
+            top: "86%",
+            width: "15%",
+            height: "auto"
+        }
     }
 ];
 

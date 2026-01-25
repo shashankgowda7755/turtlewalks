@@ -86,7 +86,7 @@ export const DirectoryPage: React.FC<DirectoryPageProps> = ({ onBack, onSelect }
                         >
                             <div className="relative w-full h-40 rounded-lg bg-saffron/5 flex items-center justify-center mb-4 overflow-hidden group-hover:bg-saffron/10 transition-colors">
                                 {school.logoUrl ? (
-                                    <img src={school.logoUrl} alt={school.name} className="w-full h-full object-contain p-1" />
+                                    <img src={school.logoUrl} alt={school.name} className="w-full h-full object-contain p-1 mix-blend-multiply" />
                                 ) : (
                                     <span className="text-4xl">{school.icon}</span>
                                 )}

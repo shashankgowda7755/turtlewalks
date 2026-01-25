@@ -225,7 +225,7 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
               </div>
             )}
             <h2 className="text-4xl font-display font-bold text-indiaNavy">
-              {['citizen', 'zimson'].includes(selectedSchool?.id || '') ? 'Enter Details' : `Enter ${selectedSchool ? 'Student' : 'Your'} Details`}
+              Enter Details
             </h2>
           </div>
 

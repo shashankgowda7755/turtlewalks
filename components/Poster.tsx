@@ -53,7 +53,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
             <img
               src={school.posterLogoUrl || school.logoUrl}
               alt={school.name}
-              className={`w-full ${school.logoPosition?.height === 'auto' ? 'h-auto' : 'h-full'} object-contain block`}
+              className={`w-full ${school.logoPosition?.height === 'auto' ? 'h-auto' : 'h-full'} object-contain block mix-blend-multiply`}
             />
           ) : (
             <span className="text-4xl filter drop-shadow-md flex items-center justify-center w-full h-full">{school.icon}</span>
