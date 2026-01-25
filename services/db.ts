@@ -205,24 +205,7 @@ const INITIAL_SCHOOLS: School[] = [
             height: "auto"
         }
     },
-    {
-        id: 'east-west-college',
-        name: "East West College of Engineering",
-        location: "Bangalore",
-        subLocation: "",
-        icon: "🎓",
-        logoUrl: "/assets/eastwest.png",
-        posterLogoUrl: "/assets/eastwest.png",
-        isActive: true,
-        isFeatured: true,
-        templateId: 'tricolor',
-        logoPosition: {
-            left: "31.00%",
-            top: "84.73%",
-            width: "14.00%",
-            height: "auto"
-        }
-    },
+
     {
         id: 'vit-chennai',
         name: "Vellore Institute of Technology",
