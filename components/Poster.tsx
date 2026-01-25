@@ -102,7 +102,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
           // Public Poster Name - FORCE CENTER ALIGNMENT
           // Using standard centering technique instead of bounding box to ensure perfect center
           left: '50%',
-          top: '63.75%', // Moved up 1.5% from 65.25%
+          top: '63.50%', // Moved up 0.25% from 63.75%
           width: 'auto',
           minWidth: '60%', // Ensure enough space
           transform: 'translateX(-50%)', // Pivot precisely on center

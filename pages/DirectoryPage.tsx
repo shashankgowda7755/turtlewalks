@@ -96,7 +96,9 @@ export const DirectoryPage: React.FC<DirectoryPageProps> = ({ onBack, onSelect }
                             <h3 className="font-bold text-lg text-indiaNavy mb-1 group-hover:text-saffron transition-colors">
                                 {school.name}
                             </h3>
-                            <p className="text-sm text-gray-500 mb-4">{school.subLocation}, {school.location}</p>
+                            <p className="text-sm text-gray-500 mb-4">
+                                {school.subLocation ? `${school.subLocation}, ` : ''}{school.location}
+                            </p>
 
                             <div className="flex items-center text-sm font-medium text-saffron group-hover:translate-x-1 transition-transform">
                                 Enter →

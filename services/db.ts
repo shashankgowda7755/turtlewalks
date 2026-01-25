@@ -59,6 +59,24 @@ const INITIAL_SCHOOLS: School[] = [
             width: "16.50%",
             height: "auto"
         }
+    },
+    {
+        id: 'pachaiyappas',
+        name: "Pachaiyappa's College for Men",
+        location: "Kanchipuram",
+        subLocation: "",
+        icon: "🎓",
+        logoUrl: "/assets/pachaiyappas.png",
+        posterLogoUrl: "/assets/pachaiyappas.png",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "34.90%",
+            top: "85.73%",
+            width: "7.75%",
+            height: "auto"
+        }
     }
 ];
 
