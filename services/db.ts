@@ -131,6 +131,24 @@ const INITIAL_SCHOOLS: School[] = [
             width: "15%",
             height: "auto"
         }
+    },
+    {
+        id: 'sivet-college',
+        name: "Sivet College, Gowrivakkam, Chennai",
+        location: "Chennai",
+        subLocation: "Gowrivakkam",
+        icon: "🎓",
+        logoUrl: "/assets/sivet_college.png",
+        posterLogoUrl: "/assets/sivet_college.png",
+        isActive: true,
+        isFeatured: true,
+        templateId: 'tricolor',
+        logoPosition: {
+            left: "30%",
+            top: "86%",
+            width: "15%",
+            height: "auto"
+        }
     }
 ];
 
