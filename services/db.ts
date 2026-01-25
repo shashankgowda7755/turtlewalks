@@ -207,7 +207,7 @@ const INITIAL_SCHOOLS: School[] = [
     },
 
     {
-        id: 'vit-chennai',
+        id: '9',
         name: "Vellore Institute of Technology",
         location: "Chennai",
         subLocation: "",
