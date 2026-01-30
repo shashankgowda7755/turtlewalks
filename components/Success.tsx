@@ -98,6 +98,13 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
         }
       }
 
+      // Explicitly apply grayscale to user photo for html2canvas to pick it up
+      const userPhotoImg = clone.querySelector('img[alt="User Photo"]');
+      if (userPhotoImg) {
+        (userPhotoImg as HTMLElement).style.filter = 'grayscale(100%)';
+        (userPhotoImg as HTMLElement).style.webkitFilter = 'grayscale(100%)';
+      }
+
       document.body.appendChild(clone);
 
       // 2. Add Background Image (with cache busting)
