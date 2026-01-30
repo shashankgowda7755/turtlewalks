@@ -10,13 +10,14 @@ import { CertificatePreview } from './components/CertificatePreview';
 import { PledgeReading } from './components/PledgeReading';
 import { Success } from './components/Success';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { InitiativeDetail } from './components/InitiativeDetail';
 import { UserData, Step } from './types';
 import { DB } from './services/db';
 import { useApp } from './context/AppContext';
 
 // 🚀 Performance: Preload critical assets on app mount
 const preloadAssets = () => {
-  const imagesToPreload = ['/assets/poster_bg.png'];
+  const imagesToPreload = ['/assets/poster_bg.png', '/assets/cleanup_cover.png', '/assets/turtle_cover.png'];
   imagesToPreload.forEach(src => {
     const img = new Image();
     img.src = src;
@@ -29,8 +30,9 @@ const runAfterPaint = (callback: () => void) => {
 };
 
 const App: React.FC = () => {
-  const { setSelectedSchool } = useApp(); // Access context here
+  const { setSelectedSchool } = useApp();
   const [currentStep, setCurrentStep] = useState<Step>(Step.Home);
+  const [selectedInitiativeId, setSelectedInitiativeId] = useState<string>('cleanup');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [userData, setUserData] = useState<UserData>({
@@ -38,7 +40,7 @@ const App: React.FC = () => {
     email: '',
     phone: '',
     class: '',
-    section: '',
+    section: '', 
     countryCode: '+91',
     photo: '',
     optInSimilarEvents: true
@@ -71,7 +73,6 @@ const App: React.FC = () => {
     runAfterPaint(() => {
       setCurrentStep(step);
       window.scrollTo(0, 0);
-      // Allow CSS transition to complete
       setTimeout(() => setIsTransitioning(false), 50);
     });
   }, []);
@@ -105,19 +106,35 @@ const App: React.FC = () => {
     goToStep(Step.Home);
   };
 
+  const handleInitiativeClick = (id: string) => {
+    setSelectedInitiativeId(id);
+    goToStep(Step.InitiativeDetails);
+  };
+
   return (
     <div className="min-h-screen bg-canvas font-sans text-body flex flex-col">
       <Header onLogoClick={handleReset} onJoin={() => goToStep(Step.GroupRegistration)} />
 
       {/* 🚀 Main content with CSS fade transition */}
       <main
-        className={`flex-1 transition-opacity duration-200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'} ${currentStep !== Step.Home ? 'pt-20' : ''}`}
+        className={`flex-1 transition-opacity duration-200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'} ${currentStep !== Step.Home && currentStep !== Step.InitiativeDetails ? 'pt-20' : ''}`}
       >
         {currentStep === Step.Home && (
           <>
             <Hero onStart={handleStart} onGroupRegister={() => goToStep(Step.GroupRegistration)} />
-            <HomeSections onJoin={() => goToStep(Step.GroupRegistration)} />
+            <HomeSections 
+                onJoin={() => goToStep(Step.GroupRegistration)} 
+                onInitiativeClick={handleInitiativeClick}
+            />
           </>
+        )}
+
+        {currentStep === Step.InitiativeDetails && (
+            <InitiativeDetail 
+                initiativeId={selectedInitiativeId}
+                onBack={() => goToStep(Step.Home)}
+                onJoin={() => goToStep(Step.GroupRegistration)} // Use the new Group Registration form
+            />
         )}
 
         {currentStep === Step.GroupRegistration && (
@@ -159,7 +176,7 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <Footer onPrivacyClick={() => setShowPrivacyPolicy(true)} />
+      {currentStep !== Step.InitiativeDetails && <Footer onPrivacyClick={() => setShowPrivacyPolicy(true)} />}
 
       {/* Privacy Policy Modal */}
       {showPrivacyPolicy && (

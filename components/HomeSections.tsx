@@ -5,9 +5,10 @@ import { InitiativesSection } from './InitiativesSection';
 
 interface HomeSectionsProps {
   onJoin?: () => void;
+  onInitiativeClick?: (id: string) => void;
 }
 
-export const HomeSections: React.FC<HomeSectionsProps> = ({ onJoin }) => {
+export const HomeSections: React.FC<HomeSectionsProps> = ({ onJoin, onInitiativeClick }) => {
   return (
     <>
       {/* Report Banner */}
@@ -29,8 +30,6 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onJoin }) => {
         </div>
       </div>
 
-      <InitiativesSection />
-      
       <MetricsSection />
 
       <GallerySection />
@@ -126,6 +125,8 @@ export const HomeSections: React.FC<HomeSectionsProps> = ({ onJoin }) => {
            </div>
         </div>
       </section>
+
+      <InitiativesSection onJoin={onJoin} onInitiativeClick={onInitiativeClick} />
     </>
   );
 };
