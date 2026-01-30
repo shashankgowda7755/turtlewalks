@@ -58,16 +58,17 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
       // C. Force High-Res Dimensions on the Clone
       // This ensures the download is always HD (800px width as per snippet), 
       // even if the user is on a small mobile screen.
+      // C. Force High-Res Dimensions on the Clone - User Requested 1500x1600
       clone.style.position = 'fixed';
       clone.style.top = '-10000px';   // Hide it off-screen
       clone.style.left = '-10000px';
-      clone.style.width = '800px';    // Standardized Width
+      
+      // Set to 1080px width as requested
+      clone.style.width = '1080px';    
 
-      // Calculate height based on aspect ratio
-      // Public: 1080x1300 | School: 1080x1600
-      const isPublic = selectedSchool?.id === 'public';
-      const aspectRatio = isPublic ? (1300 / 1080) : (1600 / 1080);
-      clone.style.height = `${800 * aspectRatio}px`;
+      // Set to 1600px height as requested
+      clone.style.height = '1600px';
+      
       clone.style.transform = 'none'; // Remove any CSS scaling
       clone.style.margin = '0';
       clone.style.boxShadow = 'none';
@@ -77,10 +78,10 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
       // The snippet specifically sets h2 to 32px
       const nameElement = clone.querySelector('h2');
       if (nameElement) {
-        // Updated logic: Increase size significantly to match preview visual weight.
-        // Base width 800px -> Font ~64px
+        // Updated logic: Increase size to match 1080px width
+        // Base width 1080px -> Font ~75px
         const nameLength = userData.fullName.length;
-        nameElement.style.fontSize = nameLength > 20 ? '38px' : nameLength > 13 ? '50px' : '64px';
+        nameElement.style.fontSize = nameLength > 20 ? '45px' : nameLength > 13 ? '60px' : '75px';
         nameElement.style.whiteSpace = 'nowrap';
         nameElement.style.fontWeight = '550';
         nameElement.style.textAlign = 'center';

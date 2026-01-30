@@ -84,23 +84,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
         </h2>
       </div>
 
-      {/* Layer 4: Logo Overlay (Bottom Footer) */}
-      <div 
-        className="absolute z-20 flex items-center justify-center"
-        style={{
-          bottom: '5%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '60%',
-          height: 'auto'
-        }}
-      >
-        <img 
-          src="/assets/poster_logo_overlay.png" 
-          alt="Initiative By" 
-          className="w-full h-auto object-contain"
-        />
-      </div>
+
 
     </div >
   );
