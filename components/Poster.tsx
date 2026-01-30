@@ -2,7 +2,7 @@ import React from 'react';
 import { UserData, Pledge, School } from '../types';
 
 /* 
-  POSTER COMPONENT - Uses image from public/assets/poster_bg.png
+  POSTER COMPONENT - Uses image from public/assets/poster.png
   The image path is simple (no spaces) to ensure it works in production.
 */
 
