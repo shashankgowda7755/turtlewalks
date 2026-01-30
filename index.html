@@ -3,17 +3,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" />
 
   <!-- Page Title -->
-  <title>My Indian Flag Pledge 🇮🇳</title>
+  <title>Save a Turtle</title>
 
   <!-- SEO Meta Tags -->
+  <!-- SEO Meta Tags -->
   <meta name="description"
-    content="Take the pledge to respect and honour the National Flag of India. A Communitree initiative to promote dignity and awareness for the Tricolor. Generate your personalized pledge certificate." />
+    content="Join the effort to protect Olive Ridley Turtles. A community initiative to promote conservation and awareness. Generate your personalized pledge certificate." />
   <meta name="keywords"
-    content="flag pledge, national flag, India, tricolor, pledge certificate, Communitree, Republic Day, Independence Day, tiranga" />
-  <meta name="author" content="Communitree" />
+    content="turtle conservation, save a turtle, olive ridley, sea turtle, chennai, marina beach, environment, conservation pledge" />
+  <meta name="author" content="Save a Turtle" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Social Media -->
@@ -33,17 +34,29 @@
   <meta name="theme-color" content="#FF9933" />
   <meta name="msapplication-TileColor" content="#138808" />
 
-  <!-- Favicon (using emoji as data URI for simplicity) -->
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇮🇳</text></svg>" />
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <script>
     tailwind.config = {
+      darkMode: "class",
       theme: {
         extend: {
           colors: {
+            primary: "#FF7F50", // Coral
+            "primary-hover": "#E56A3F",
+            secondary: "#95D5B2", // Seafoam Green
+            midnight: "#001B48", // Midnight Blue
+            "midnight-light": "#002865",
+            "background-light": "#F8FAFC", // Slate 50
+            "background-dark": "#001B48", // Midnight Blue
+            surface: "#FFFFFF",
+            "surface-dark": "#0B2553",
+            // Keep existing colors for backward compatibility if needed
             saffron: '#FF671F',
             indiaGreen: '#046A38',
             indiaNavy: '#06038D',
@@ -53,9 +66,15 @@
             danger: '#D32F2F',
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Outfit', 'sans-serif'],
-            poster: ['Big Shoulders Display', 'sans-serif'],
+             display: ["Montserrat", "sans-serif"],
+             body: ["Inter", "sans-serif"],
+             poster: ['Big Shoulders Display', 'sans-serif'], // Keeping for existing components if any
+          },
+          borderRadius: {
+              DEFAULT: "0.5rem",
+          },
+          backgroundImage: {
+              'ocean-gradient': 'linear-gradient(to bottom, rgba(0, 27, 72, 0.6), rgba(0, 27, 72, 0.9))',
           },
           animation: {
             blob: "blob 7s infinite",
@@ -64,18 +83,10 @@
           },
           keyframes: {
             blob: {
-              "0%": {
-                transform: "translate(0px, 0px) scale(1)",
-              },
-              "33%": {
-                transform: "translate(30px, -50px) scale(1.1)",
-              },
-              "66%": {
-                transform: "translate(-20px, 20px) scale(0.9)",
-              },
-              "100%": {
-                transform: "translate(0px, 0px) scale(1)",
-              },
+              "0%": { transform: "translate(0px, 0px) scale(1)" },
+              "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+              "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+              "100%": { transform: "translate(0px, 0px) scale(1)" },
             },
             fadeIn: {
               '0%': { opacity: '0' },
@@ -86,9 +97,9 @@
               '100%': { transform: 'translateY(0)', opacity: '1' },
             }
           },
-        }
-      }
-    }
+        },
+      },
+    };
   </script>
 
 

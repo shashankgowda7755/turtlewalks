@@ -11,7 +11,6 @@ interface PreviewProps {
 }
 
 export const CertificatePreview: React.FC<PreviewProps> = ({ userData, onBack, onConfirm }) => {
-  const { selectedSchool } = useApp();
 
   return (
     <div className="min-h-screen bg-canvas pt-20 pb-12 px-4 flex flex-col items-center">
@@ -32,7 +31,7 @@ export const CertificatePreview: React.FC<PreviewProps> = ({ userData, onBack, o
         {/* Preview Container */}
         {/* We simply constrain the width here. The Poster component handles aspect ratio and scaling. */}
         <div className="w-full max-w-[350px] shadow-2xl rounded-lg overflow-hidden mb-8 bg-white border border-gray-100">
-          <Poster userData={userData} school={selectedSchool} pledge={FIXED_PLEDGE} />
+          <Poster userData={userData} pledge={FIXED_PLEDGE} />
         </div>
 
         {/* Buttons */}

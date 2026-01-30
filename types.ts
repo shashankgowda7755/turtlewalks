@@ -1,10 +1,10 @@
 export enum Step {
   Home,
-  Directory,
   Form,
   Preview,
   Reading,
-  Success
+  Success,
+  GroupRegistration
 }
 
 // Basic types shared across the app

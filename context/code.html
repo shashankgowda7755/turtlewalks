@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Save a Turtle Chennai | Unified Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF7F50", // Coral
+                        "primary-hover": "#E56A3F",
+                        secondary: "#95D5B2", // Seafoam Green
+                        midnight: "#001B48", // Midnight Blue
+                        "midnight-light": "#002865",
+                        "background-light": "#F8FAFC", // Slate 50
+                        "background-dark": "#001B48", // Midnight Blue
+                        surface: "#FFFFFF",
+                        "surface-dark": "#0B2553",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    backgroundImage: {
+                        'ocean-gradient': 'linear-gradient(to bottom, rgba(0, 27, 72, 0.6), rgba(0, 27, 72, 0.9))',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dark .glass-panel {
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body transition-colors duration-300">
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/90 dark:bg-midnight/90 backdrop-blur-md border-b border-gray-100 dark:border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+<span class="material-icons-round text-primary text-4xl">travel_explore</span>
+<div>
+<h1 class="font-display font-bold text-xl tracking-tight text-midnight dark:text-white leading-none">SAVE A TURTLE</h1>
+<p class="text-xs text-gray-500 dark:text-secondary font-medium tracking-widest">CHENNAI CHAPTER</p>
+</div>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Impact</a>
+<a class="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#schedule">The Walk</a>
+<a class="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#community">Community</a>
+<a class="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">News</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" id="theme-toggle">
+<span class="material-icons-round dark:hidden">dark_mode</span>
+<span class="material-icons-round hidden dark:block">light_mode</span>
+</button>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-full shadow-sm text-white bg-primary hover:bg-primary-hover transition-all transform hover:-translate-y-0.5" href="#">
+                        Donate
+                    </a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-gray-700 dark:text-white p-2">
+<span class="material-icons-round">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Turtle hatchling walking towards the ocean" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB689TU_ArqpVl94pp5z3ogEicDCgdJc7w4v3EK43zf8m05pw89bRz8bEBOLgSdGbiWPEEHcu5pJmsBtPmQRmU3kOoF8k2_B-SmpzqsW4w-aNkBs0HtUe2eVjy2tMYtLccVzPDogy5g2W_HLGzY2MUqk0H4oNAZ0jIDnHFquCL7P_osUDZLxt2OA0XhOsXf_8qBLgBK6wiEMViSsCmfaPztL7CwNbEHtgE-GYEstizhcTY1Dcf70sgbBI_q-ckMEadRpPAXVolkJa2U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-midnight/40 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center max-w-5xl mx-auto px-4 mt-16">
+<span class="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/50 text-secondary text-xs font-bold tracking-wider mb-6 uppercase animate-pulse">
+                Olive Ridley Conservation Season 2024
+            </span>
+<h1 class="font-display font-extrabold text-5xl md:text-7xl text-white mb-6 leading-tight drop-shadow-lg">
+                Collective Action for<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-teal-200">Our Oceans.</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Join the nightly patrol along Chennai's coastline to protect vulnerable Olive Ridley hatchlings and guide them safely to the sea.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all transform hover:scale-105" href="#schedule">
+                    Join the Walk
+                    <span class="material-icons-round ml-2">directions_walk</span>
+</a>
+<a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-full text-white border-2 border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all" href="#community">
+                    Register Your Group
+                    <span class="material-icons-round ml-2">groups</span>
+</a>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce">
+<span class="material-icons-round text-3xl">keyboard_arrow_down</span>
+</div>
+</section>
+<div class="bg-red-600 text-white relative z-20 shadow-lg border-b-4 border-red-800">
+<div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+<div class="flex items-center gap-4">
+<div class="bg-white/20 p-2 rounded-full animate-pulse">
+<span class="material-icons-round text-2xl">sos</span>
+</div>
+<div>
+<p class="font-bold text-base sm:text-lg">Report a Stranded Turtle</p>
+<p class="text-xs text-red-100 opacity-90">Dead or alive, your report helps us track population health.</p>
+</div>
+</div>
+<a class="flex items-center gap-2 bg-white text-red-700 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-red-50 transition-colors shadow-sm" href="tel:+919876543210">
+<span class="material-icons-round text-xl">phone_in_talk</span>
+                +91 98765 43210
+            </a>
+</div>
+</div>
+<section class="py-20 bg-background-light dark:bg-midnight relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display font-bold text-3xl text-midnight dark:text-white mb-4">Power in Numbers</h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Decades of dedication by students and volunteers have turned the tide for Chennai's marine life.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-black/20 text-center group hover:-translate-y-1 transition-transform duration-300 border border-gray-100 dark:border-white/5 flex flex-col h-full">
+<div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-icons-round text-primary text-3xl">pets</span>
+</div>
+<h3 class="font-display font-extrabold text-4xl text-midnight dark:text-white mb-2">200k+</h3>
+<p class="text-gray-500 dark:text-gray-400 font-medium mb-6">Hatchlings Released</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
+<p class="text-xs italic text-gray-500 dark:text-gray-400">"Watching them race to the waves is pure magic."</p>
+<p class="text-xs font-bold text-gray-400 dark:text-gray-500 mt-1">— Priya, Student</p>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-black/20 text-center group hover:-translate-y-1 transition-transform duration-300 border border-gray-100 dark:border-white/5 flex flex-col h-full">
+<div class="w-16 h-16 mx-auto bg-secondary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
+<span class="material-icons-round text-secondary text-3xl">history</span>
+</div>
+<h3 class="font-display font-extrabold text-4xl text-midnight dark:text-white mb-2">35+</h3>
+<p class="text-gray-500 dark:text-gray-400 font-medium mb-6">Years of Service</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
+<p class="text-xs italic text-gray-500 dark:text-gray-400">"A legacy built night by night, walk by walk."</p>
+<p class="text-xs font-bold text-gray-400 dark:text-gray-500 mt-1">— Dr. Rao, SSTCN</p>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-black/20 text-center group hover:-translate-y-1 transition-transform duration-300 border border-gray-100 dark:border-white/5 flex flex-col h-full">
+<div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
+<span class="material-icons-round text-blue-500 text-3xl">map</span>
+</div>
+<h3 class="font-display font-extrabold text-4xl text-midnight dark:text-white mb-2">14km</h3>
+<p class="text-gray-500 dark:text-gray-400 font-medium mb-6">Patrolled Daily</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
+<p class="text-xs italic text-gray-500 dark:text-gray-400">"My fitness tracker loves it, my soul loves it more."</p>
+<p class="text-xs font-bold text-gray-400 dark:text-gray-500 mt-1">— Arjun, Techie</p>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-black/20 text-center group hover:-translate-y-1 transition-transform duration-300 border border-gray-100 dark:border-white/5 flex flex-col h-full">
+<div class="w-16 h-16 mx-auto bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-colors">
+<span class="material-icons-round text-purple-500 text-3xl">diversity_3</span>
+</div>
+<h3 class="font-display font-extrabold text-4xl text-midnight dark:text-white mb-2">10k+</h3>
+<p class="text-gray-500 dark:text-gray-400 font-medium mb-6">Volunteers</p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
+<p class="text-xs italic text-gray-500 dark:text-gray-400">"I came alone, but found a family on the beach."</p>
+<p class="text-xs font-bold text-gray-400 dark:text-gray-500 mt-1">— Sarah, Expat</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-midnight-light relative" id="schedule">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-20">
+<span class="text-primary font-bold tracking-wider text-sm uppercase">Join the Journey</span>
+<h2 class="font-display font-bold text-3xl md:text-4xl text-midnight dark:text-white mt-2 mb-6">The Experience &amp; Events</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h3 class="text-2xl font-display font-bold text-midnight dark:text-white mb-8 flex items-center gap-2">
+<span class="material-icons-round text-secondary">timeline</span>
+                        The Night Walk
+                    </h3>
+<div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700 space-y-12">
+<div class="relative group">
+<div class="absolute -left-[41px] top-0 bg-primary border-4 border-white dark:border-midnight-light w-6 h-6 rounded-full"></div>
+<span class="inline-block px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-bold mb-2">11:30 PM</span>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Assembly @ Neelangarai</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Briefing on do's and don'ts. Get your red-light torches ready.</p>
+</div>
+<div class="relative group">
+<div class="absolute -left-[41px] top-0 bg-white dark:bg-surface-dark border-4 border-secondary w-6 h-6 rounded-full"></div>
+<span class="inline-block px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-bold mb-2">12:30 AM</span>
+<h4 class="font-bold text-lg text-midnight dark:text-white">The Patrol Begins</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Walking in silence, scanning the high-tide line for tracks.</p>
+</div>
+<div class="relative group">
+<div class="absolute -left-[41px] top-0 bg-white dark:bg-surface-dark border-4 border-secondary w-6 h-6 rounded-full"></div>
+<span class="inline-block px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-bold mb-2">02:00 AM</span>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Nesting &amp; Collection</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">If a nest is found, volunteers help measure and relocate eggs safely.</p>
+</div>
+<div class="relative group">
+<div class="absolute -left-[41px] top-0 bg-white dark:bg-surface-dark border-4 border-secondary w-6 h-6 rounded-full"></div>
+<span class="inline-block px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-bold mb-2">05:00 AM</span>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Arrival @ Besant Nagar</h4>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">End of the walk at the hatchery. Relocation of eggs to protected pits.</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-display font-bold text-midnight dark:text-white mb-8 flex items-center gap-2">
+<span class="material-icons-round text-primary">calendar_month</span>
+                        Upcoming Patrol Dates
+                    </h3>
+<div class="space-y-4">
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow flex items-center justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold uppercase">Weekend Special</div>
+<span class="text-gray-400 text-xs flex items-center"><span class="material-icons-round text-[14px] mr-1">location_on</span> Neelangarai Beach</span>
+</div>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Saturday, March 15</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">10 slots remaining</p>
+</div>
+<button class="px-5 py-2 bg-secondary/10 text-teal-700 dark:text-secondary hover:bg-secondary hover:text-white rounded-lg text-sm font-bold transition-colors">
+                            Sign Up
+                        </button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow flex items-center justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="text-gray-400 text-xs flex items-center"><span class="material-icons-round text-[14px] mr-1">location_on</span> Besant Nagar Beach</span>
+</div>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Sunday, March 16</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">24 slots remaining</p>
+</div>
+<button class="px-5 py-2 bg-secondary/10 text-teal-700 dark:text-secondary hover:bg-secondary hover:text-white rounded-lg text-sm font-bold transition-colors">
+                            Sign Up
+                        </button>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow flex items-center justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="text-gray-400 text-xs flex items-center"><span class="material-icons-round text-[14px] mr-1">location_on</span> Neelangarai Beach</span>
+</div>
+<h4 class="font-bold text-lg text-midnight dark:text-white">Friday, March 21</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">Full</p>
+</div>
+<button class="px-5 py-2 bg-gray-100 text-gray-400 cursor-not-allowed rounded-lg text-sm font-bold" disabled="">
+                            Waitlist
+                        </button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<a class="text-primary hover:text-primary-hover font-bold text-sm inline-flex items-center gap-1" href="#">
+                        View Full Calendar <span class="material-icons-round text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-blue-50 dark:bg-slate-900 border-t border-blue-100 dark:border-white/5" id="community">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row gap-12 items-start">
+<div class="lg:w-1/3 w-full">
+<div class="bg-gradient-to-br from-midnight to-blue-900 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+<h3 class="font-display font-bold text-3xl mb-4 relative z-10">Bring Your Team</h3>
+<p class="text-blue-100 mb-8 relative z-10">Corporate teams, school groups, and college clubs make the biggest impact. Book a private walk for your organization.</p>
+<ul class="space-y-3 mb-8 relative z-10 text-sm">
+<li class="flex items-center gap-2"><span class="material-icons-round text-secondary">check_circle</span> Dedicated guide</li>
+<li class="flex items-center gap-2"><span class="material-icons-round text-secondary">check_circle</span> Certificate of participation</li>
+<li class="flex items-center gap-2"><span class="material-icons-round text-secondary">check_circle</span> Impact report</li>
+</ul>
+<button class="w-full py-3 bg-secondary hover:bg-teal-400 text-midnight font-bold rounded-lg transition-colors relative z-10">
+                        Register Group
+                    </button>
+</div>
+</div>
+<div class="lg:w-2/3 w-full">
+<div class="mb-8">
+<h3 class="font-display font-bold text-2xl text-midnight dark:text-white">Student &amp; Community Partners</h3>
+<p class="text-gray-500 dark:text-gray-400">Local heroes leading the charge this season.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">L</div>
+<span class="font-bold text-sm text-midnight dark:text-white">Loyola Nature Club</span>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">W</div>
+<span class="font-bold text-sm text-midnight dark:text-white">WCC Green Team</span>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">I</div>
+<span class="font-bold text-sm text-midnight dark:text-white">IIT Madras Enviro</span>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">S</div>
+<span class="font-bold text-sm text-midnight dark:text-white">Stella Maris Bio</span>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">M</div>
+<span class="font-bold text-sm text-midnight dark:text-white">MCC Zoology</span>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col items-center justify-center text-center hover:shadow-md transition-all group">
+<div class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-lg mb-3 group-hover:scale-110 transition-transform">
+<span class="material-icons-round text-xl">add</span>
+</div>
+<span class="font-bold text-sm text-gray-500">Join the Network</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Ecosystem Partners</h4>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 group cursor-default">
+<div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">TN</div>
+<span class="font-display font-bold text-lg text-gray-600 dark:text-gray-300">Forest Dept.</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">S</div>
+<span class="font-display font-bold text-lg text-gray-600 dark:text-gray-300">SSTCN</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">T</div>
+<span class="font-display font-bold text-lg text-gray-600 dark:text-gray-300">Tree Foundation</span>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-midnight text-white pt-20 pb-10 border-t-4 border-secondary">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-icons-round text-secondary text-3xl">travel_explore</span>
+<h2 class="font-display font-bold text-2xl">SAVE A TURTLE</h2>
+</div>
+<p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        Dedicated to the conservation of Olive Ridley turtles along the Chennai coast through community action, education, and protection.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons-round text-sm">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons-round text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons-round text-sm">photo_camera</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-display font-bold text-lg mb-6 text-secondary">Quick Links</h3>
+<ul class="space-y-3 text-sm text-gray-300">
+<li><a class="hover:text-primary transition-colors" href="#">About the Initiative</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Volunteer Guidelines</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Walk Schedule</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hatchery Status</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Report a Sighting</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-display font-bold text-lg mb-6 text-secondary">Emergency Contact</h3>
+<ul class="space-y-4 text-sm text-gray-300">
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-primary text-lg mt-0.5">location_on</span>
+<span>No. 4, Besant Nagar Beach Road,<br/>Chennai, TN 600090</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-icons-round text-primary text-lg">call</span>
+<span>+91 98765 43210</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-icons-round text-primary text-lg">email</span>
+<span>hello@saveaturtle.in</span>
+</li>
+</ul>
+</div>
+<div class="col-span-1">
+<h3 class="font-display font-bold text-lg mb-6 text-secondary">Stay in the Shell</h3>
+<p class="text-sm text-gray-300 mb-4">Get the latest hatchery updates and walk schedules.</p>
+<form class="space-y-3">
+<input class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary text-white placeholder-gray-400 text-sm" placeholder="Enter your email" type="email"/>
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 px-4 rounded-lg transition-colors text-sm" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+<p>© 2024 Save a Turtle Chennai. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Use</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        // Check for saved user preference, if any, on load of the website
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        themeToggleBtn.addEventListener('click', function() {
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                // if NOT set via local storage previously
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+
+</body></html>

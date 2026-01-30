@@ -27,7 +27,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
                 <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar space-y-8 text-stone-600">
 
                     <div className="border-b border-stone-100 pb-6">
-                        <h1 className="text-2xl font-bold text-stone-900 mb-2">Privacy Policy – Communitree Custom Flag Pledge</h1>
+                        <h1 className="text-2xl font-bold text-stone-900 mb-2">Privacy Policy – Save a Turtle Initiative</h1>
                         <p className="text-sm font-medium text-stone-500">
                             Last Updated: 22 Jan 2026
                         </p>
@@ -38,7 +38,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
                             1. Introduction
                         </h3>
                         <p className="text-sm leading-relaxed text-justify">
-                            This website is operated by <strong>Communitree</strong> (“we”, “us”, “our”) to enable participants to generate a customised flag pledge certificate and, where they choose, to receive information about similar civic initiatives in the future. The initiative is a non‑cash, awareness‑driven effort to encourage people to take a pledge and participate, and is not linked to any monetary reward or benefit.
+                            This website is operated by the <strong>Save a Turtle Initiative</strong> (“we”, “us”, “our”) to enable participants to generate a customised pledge certificate and, where they choose, to receive information about similar conservation initiatives in the future. The initiative is a non‑cash, awareness‑driven effort to encourage people to take a pledge and participate, and is not linked to any monetary reward or benefit.
                         </p>
                         <p className="text-sm leading-relaxed text-justify">
                             This Privacy Policy explains how we collect, use, store, and protect your personal data. This document is an electronic record in terms of the Information Technology Act, 2000 and the rules made thereunder, including the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and is intended to align with applicable provisions of the Digital Personal Data Protection Act, 2023 (“DPDP Act”) and related rules, to the extent applicable.
@@ -124,7 +124,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
                             <Server size={18} className="text-indigo-500" /> 6. Data Storage, Retention and Security
                         </h3>
                         <p className="text-sm leading-relaxed text-justify">
-                            If you provide consent, your name, email address and/or phone number are stored in our systems and are accessible only to authorised personnel of Communitree or trusted service providers working under appropriate confidentiality obligations.
+                            If you provide consent, your name, email address and/or phone number are stored in our systems and are accessible only to authorised personnel or trusted service providers working under appropriate confidentiality obligations.
                         </p>
                         <p className="text-sm leading-relaxed text-justify">
                             We implement reasonable security practices and procedures, including technical and organisational safeguards, to protect your personal data against unauthorised access, alteration, disclosure or destruction, in line with Section 43A of the IT Act, the SPDI Rules 2011, and the general obligations under the DPDP Act.
@@ -220,7 +220,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
                             If you have any questions, concerns, complaints or grievances regarding this Privacy Policy or our handling of your personal data, you may contact us at:
                         </p>
                         <div className="bg-stone-800 text-white p-6 rounded-xl mt-4">
-                            <h4 className="font-bold text-lg mb-1">Com Communitree</h4>
+                            <h4 className="font-bold text-lg mb-1">Save a Turtle</h4>
                             <p className="text-stone-300 text-sm mb-4">Privacy & Grievance Officer</p>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">

@@ -3,65 +3,89 @@ import { Flag, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface HeroProps {
   onStart: () => void;
+  onGroupRegister?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onStart }) => {
+interface SlideConfig {
+  image: string;
+  alignment: 'left' | 'center';
+}
+
+export const Hero: React.FC<HeroProps> = ({ onStart, onGroupRegister }) => {
+  const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
+  
+  const slides: SlideConfig[] = [
+    { image: '/assets/turtle_hero_bg_3.png', alignment: 'left' },
+    { image: '/assets/turtle_hero_bg_2.jpg', alignment: 'center' }, // "smaw int middle" interpreted as center
+    { image: '/assets/turtle_hero_bg.jpeg', alignment: 'center' }
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlideIndex((prev) => (prev + 1) % slides.length);
+    }, 4000); // Increased slightly for readability
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentSlide = slides[currentSlideIndex];
+
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center relative overflow-hidden bg-white selection:bg-orange-100 selection:text-orange-900 pt-20 pb-10">
-
-      {/* Soft Gradient Background (Reference Match) */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(circle at 5% 5%, rgba(255, 240, 229, 0.8) 0%, rgba(255, 255, 255, 0) 60%),
-            radial-gradient(circle at 95% 95%, rgba(230, 244, 234, 0.8) 0%, rgba(255, 255, 255, 0) 60%),
-            #ffffff
-          `
-        }} />
-
-      <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center text-center">
-
-        {/* National Pride Initiative Badge */}
-        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border border-stone-100 shadow-sm mb-8 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-[#FF671F]"></span>
-          <span className="text-[#9C4221] font-bold tracking-widest text-[10px] md:text-xs uppercase">
-            NATIONAL PRIDE INITIATIVE
-          </span>
-        </div>
-
-        {/* Main Heading */}
-        <h1 className="font-display font-black tracking-tighter leading-[0.85] mb-6 animate-slide-up" style={{ animationDelay: '100ms' }}>
-          <span className="block text-4xl md:text-7xl text-stone-300 mb-2 tracking-tight font-bold">
-            Pledge for
-          </span>
-          <div className="flex justify-center gap-x-2 md:gap-x-4 text-5xl md:text-7xl lg:text-[9rem] font-black tracking-tight leading-none pb-6 whitespace-nowrap">
-            <div className="relative inline-block pb-[0.1em]">
-              {/* Gradient Fill Layer (Front) - Horizontal Gradient Match */}
-              <span className="relative z-10 text-transparent bg-clip-text" style={{
-                backgroundImage: 'linear-gradient(90deg, #FF671F 0%, #000080 50%, #046A38 100%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-              }}>
-                MY INDIAN FLAG
-              </span>
-            </div>
+    <section className="relative h-[105dvh] flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        {slides.map((slide, index) => (
+          <div key={slide.image} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}>
+            <img 
+                src={slide.image} 
+                alt={`Hero Background ${index + 1}`} 
+                className="absolute inset-0 w-full h-full object-cover" 
+            />
+            {/* Dynamic overlay based on alignment */}
+            <div className={`absolute inset-0 ${
+                slide.alignment === 'left' 
+                ? 'bg-gradient-to-r from-midnight/70 via-midnight/40 to-transparent' 
+                : 'bg-gradient-to-br from-midnight/40 via-blue-900/20 to-transparent'
+            }`}></div>
           </div>
-        </h1>
-
-        <p className="text-xl md:text-2xl text-stone-500 mb-12 max-w-xl mx-auto font-medium leading-relaxed">
-          My promise for the Indian Flag
-        </p>
-
-        {/* CTA Button */}
-        <button
-          onClick={onStart}
-          className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#1c1917] text-white font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 overflow-hidden"
-        >
-          Pledge Now
-          <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-        </button>
-
+        ))}
       </div>
-    </div >
+
+      <div className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 transition-all duration-1000 ${
+          currentSlide.alignment === 'left' ? 'text-left' : 'text-center'
+      }`}>
+        <div className={`w-full ${currentSlide.alignment === 'left' ? 'max-w-3xl' : 'max-w-4xl mx-auto'}`}>
+            <span className="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/50 text-secondary text-xs font-bold tracking-wider mb-6 uppercase animate-pulse">
+                Olive Ridley Conservation Season 2026
+            </span>
+            <h1 className="font-display font-extrabold text-4xl md:text-5xl lg:text-7xl text-white mb-6 leading-tight drop-shadow-lg">
+                Collective Action for<br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-teal-200">Our Oceans.</span>
+            </h1>
+            <p className={`text-base md:text-xl text-gray-200 mb-8 md:mb-10 max-w-2xl font-light leading-relaxed ${currentSlide.alignment === 'center' ? 'mx-auto' : ''}`}>
+                Join for Night Walks on Marina.
+            </p>
+            
+            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 ${currentSlide.alignment === 'center' ? 'justify-center' : 'justify-start'}`}>
+                <button 
+                    onClick={onStart}
+                    className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold rounded-full text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all transform hover:scale-105"
+                >
+                    Download Certificate
+                    <span className="material-icons-round ml-2 text-lg sm:text-xl">download</span>
+                </button>
+                <button 
+                    onClick={onGroupRegister}
+                    className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold rounded-full text-white border-2 border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all"
+                >
+                    JOIN US FOR WALKS
+                    <span className="material-icons-round ml-2 text-lg sm:text-xl">groups</span>
+                </button>
+            </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce">
+        <span className="material-icons-round text-3xl">keyboard_arrow_down</span>
+      </div>
+    </section>
   );
 };

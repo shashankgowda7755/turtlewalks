@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { AppProvider } from './context/AppContext';
-import { DirectoryPage } from './pages/DirectoryPage';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { FlagCode } from './components/FlagCode';
+import { HomeSections } from './components/HomeSections';
 import { Footer } from './components/Footer';
 import { UserForm } from './components/UserForm';
+import { GroupRegistrationForm } from './components/GroupRegistrationForm';
 import { CertificatePreview } from './components/CertificatePreview';
 import { PledgeReading } from './components/PledgeReading';
 import { Success } from './components/Success';
@@ -47,7 +47,7 @@ const App: React.FC = () => {
   // 🚀 Preload assets on mount and set title
   useEffect(() => {
     preloadAssets();
-    document.title = "My Indian Flag Pledge 🇮🇳";
+    document.title = "Save a Turtle";
 
     // 🔗 Check for direct org link parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -76,20 +76,7 @@ const App: React.FC = () => {
     });
   }, []);
 
-  const handleStart = () => goToStep(Step.Directory);
-
-  const handleDirectorySelect = () => goToStep(Step.Form);
-
-  const handleSchoolSelect = (schoolId: string) => {
-    // Direct navigation handler for homepage featured cards
-    const school = DB.getSchoolById(schoolId);
-    if (school) {
-      setSelectedSchool(school);
-      goToStep(Step.Form);
-    } else {
-      goToStep(Step.Directory);
-    }
-  }
+  const handleStart = () => goToStep(Step.Form);
 
   const handleFormSubmit = () => goToStep(Step.Preview);
 
@@ -120,128 +107,21 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-canvas font-sans text-body flex flex-col">
-      <Header onLogoClick={handleReset} />
+      <Header onLogoClick={handleReset} onJoin={() => goToStep(Step.GroupRegistration)} />
 
       {/* 🚀 Main content with CSS fade transition */}
       <main
-        className={`flex-1 transition-opacity duration-200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'
-          }`}
+        className={`flex-1 transition-opacity duration-200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'} ${currentStep !== Step.Home ? 'pt-20' : ''}`}
       >
         {currentStep === Step.Home && (
           <>
-            <Hero onStart={handleStart} />
-
-            {/* PARTNER INSTITUTIONS SECTION */}
-            <section className="py-20 px-6 bg-white border-b border-stone-100">
-              <div className="max-w-7xl mx-auto">
-                <div className="flex justify-between items-end mb-10">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-indiaNavy border-b-4 border-indiaGreen inline-block pb-2">
-                      Partner<br />Organisations
-                    </h2>
-                  </div>
-                  <button
-                    onClick={() => goToStep(Step.Directory)}
-                    className="hidden md:flex items-center gap-2 text-stone-500 font-bold text-sm tracking-wider hover:text-saffron transition-colors"
-                  >
-                    VIEW ALL ORGANISATIONS →
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {/* FEATUREED SCHOOLS ONLY */}
-                  {DB.getSchools().filter(s => s.isFeatured).slice(0, 3).map((school, index) => (
-                    <div
-                      key={school.id}
-                      className="group relative bg-white rounded-2xl p-6 shadow-sm border border-stone-100 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1 overflow-hidden cursor-pointer"
-                      onClick={() => handleSchoolSelect(school.id)}
-                    >
-                      {/* Gradient Border Effect on Hover */}
-                      <div className="absolute inset-0 rounded-2xl md:rounded-3xl border-2 border-transparent group-hover:border-orange-100 transition-colors pointer-events-none" />
-
-                      {/* Subtle Background Gradient */}
-                      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${index === 0 ? 'from-orange-50/50 via-transparent to-transparent' :
-                        index === 1 ? 'from-blue-50/50 via-transparent to-transparent' :
-                          'from-green-50/50 via-transparent to-transparent'
-                        }`} />
-
-                      <div className="relative z-10">
-                        {/* Large Rectangular Logo Container */}
-                        <div className={`relative w-full h-40 rounded-xl mb-6 flex items-center justify-center overflow-hidden border border-stone-100 transition-colors duration-300 group-hover:border-transparent ${index === 0 ? 'bg-saffron/5' :
-                          index === 1 ? 'bg-indiaNavy/5' :
-                            'bg-indiaGreen/5'
-                          }`}>
-                          {school.logoUrl ? (
-                            <img src={school.logoUrl} className="w-full h-full object-contain p-4" alt={school.name} />
-                          ) : (
-                            <span className="text-5xl">{school.icon}</span>
-                          )}
-
-                          {/* Verified Badge - Inside container */}
-                          <div className="absolute top-3 right-3 text-blue-500 bg-white p-1 rounded-full shadow-sm">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
-                          </div>
-                        </div>
-
-                        <h3 className="text-xl font-bold text-indiaNavy mb-2 group-hover:text-saffron transition-colors">{school.name}</h3>
-
-                        <p className="text-xs font-bold text-stone-400 uppercase tracking-wider flex items-center gap-1.5 mb-8">
-                          <svg className="text-stone-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                          {school.subLocation}, {school.location}
-                        </p>
-
-                        <div className="w-full py-3.5 bg-stone-900 text-white font-bold text-center rounded-xl text-sm tracking-wide transition-all group-hover:bg-[#1E8F43] group-hover:shadow-lg group-hover:shadow-green-900/20">
-                          Join the Movement
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-10 text-center md:hidden">
-                  <button
-                    onClick={() => goToStep(Step.Directory)}
-                    className="text-stone-500 font-bold text-sm tracking-wider"
-                  >
-                    VIEW ALL ORGANISATIONS →
-                  </button>
-                </div>
-              </div>
-            </section>
-
-            <FlagCode />
-
-            {/* Secondary CTA */}
-            <section className="bg-stone-900 border-t border-stone-800 py-16 px-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
-
-              <div className="max-w-4xl mx-auto text-center relative z-10">
-                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                  Join US in this Movement.
-                </h2>
-                <p className="text-stone-400 text-lg mb-10 max-w-2xl mx-auto">
-                  Commit to respect and honour the Flag. Your pledge is a promise to the nation.
-                </p>
-                <button
-                  onClick={handleStart}
-                  className="bg-gradient-to-r from-saffron via-white to-indiaGreen p-[2px] rounded-full hover:shadow-[0_0_40px_-5px_rgba(255,103,31,0.6)] transition-all transform hover:-translate-y-1"
-                >
-                  <div className="bg-stone-900 px-8 py-4 rounded-full flex items-center gap-2">
-                    <span className="text-white font-bold text-lg tracking-wide">TAKE THE PLEDGE</span>
-                    <span className="w-8 h-8 rounded-full bg-white text-stone-900 flex items-center justify-center font-bold">→</span>
-                  </div>
-                </button>
-              </div>
-            </section>
+            <Hero onStart={handleStart} onGroupRegister={() => goToStep(Step.GroupRegistration)} />
+            <HomeSections onJoin={() => goToStep(Step.GroupRegistration)} />
           </>
         )}
 
-        {currentStep === Step.Directory && (
-          <DirectoryPage
-            onBack={() => goToStep(Step.Home)}
-            onSelect={handleDirectorySelect}
-          />
+        {currentStep === Step.GroupRegistration && (
+          <GroupRegistrationForm onBack={() => goToStep(Step.Home)} />
         )}
 
         {currentStep === Step.Form && (

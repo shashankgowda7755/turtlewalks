@@ -16,63 +16,26 @@ interface PosterProps {
 }
 
 export const Poster: React.FC<PosterProps> = ({ id, userData, school, className = '', showPlaceholderText = true }) => {
-  const isPublic = school?.id === 'public';
-
+  // Enforcing standard poster style regardless of input
+  
   return (
     <div
       id={id || 'certificate-visual'}
-      className={`relative ${isPublic ? 'aspect-[1080/1300]' : 'aspect-[1080/1600]'} bg-white overflow-hidden text-gray-900 mx-auto shadow-sm ${className}`}
+      className={`relative aspect-[1080/1600] bg-white overflow-hidden text-gray-900 mx-auto shadow-sm ${className}`}
     >
-      {console.log('🖼️ Poster Rendered:', { school, userData, logoUrl: school?.logoUrl, photo: userData.photo ? 'Present' : 'Missing' })}
+      {console.log('🖼️ Poster Rendered:', { userData, photo: userData.photo ? 'Present' : 'Missing' })}
 
       {/* Layer 1: Background Image */}
       <img
-        src={isPublic ? "/assets/PUBLIC.png" : "/assets/poster.png"}
+        src="/assets/poster.png"
         className="absolute inset-0 w-full h-full object-cover"
         alt="Background"
-        onError={(e) => {
-          // Fallback if public poster doesn't exist yet
-          if (isPublic) {
-            e.currentTarget.src = "/assets/poster.png";
-          }
-        }}
       />
-
-      {/* Layer 1.5: School Logo - Hide for Public as they have a custom background */}
-      {school && !isPublic && (school.posterLogoUrl || school.logoUrl || school.icon) && (
-        <div
-          className="absolute z-20"
-          style={{
-            left: school.logoPosition?.left || '23.95%',
-            top: school.logoPosition?.top || '85.29%',
-            width: school.logoPosition?.width || '19.14%',
-            height: school.logoPosition?.height || '5.94%'
-          }}
-        >
-          {school.posterLogoUrl || school.logoUrl ? (
-            <img
-              src={school.posterLogoUrl || school.logoUrl}
-              alt={school.name}
-              className={`w-full ${school.logoPosition?.height === 'auto' ? 'h-auto' : 'h-full'} object-contain block mix-blend-multiply`}
-            />
-          ) : (
-            <span className="text-4xl filter drop-shadow-md flex items-center justify-center w-full h-full">{school.icon}</span>
-          )}
-        </div>
-      )}
-
 
       {/* Layer 2: Dynamic User Photo */}
       <div
         className="absolute rounded-full overflow-hidden z-10 flex items-center justify-center bg-gray-100/50"
-        style={isPublic ? {
-          // Public Poster Photo Coordinates (1080x1300)
-          // X: 305.1px, Y: 401.7px, W: 400.3px, H: 401.2px
-          left: '28.25%',
-          top: '30.90%',
-          width: '37.06%',
-          height: '30.86%'
-        } : {
+        style={{
           // Standard School Poster Photo Coordinates
           left: '26.07%',
           top: '30.31%',
@@ -98,19 +61,10 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       {/* Layer 3: Dynamic User Name */}
       <div
         className="absolute z-10 flex items-center justify-center"
-        style={isPublic ? {
-          // Public Poster Name - FORCE CENTER ALIGNMENT
-          // Using standard centering technique instead of bounding box to ensure perfect center
-          left: '50%',
-          top: '63.50%', // Moved up 0.25% from 63.75%
-          width: 'auto',
-          minWidth: '60%', // Ensure enough space
-          transform: 'translateX(-50%)', // Pivot precisely on center
-          height: '5.51%'
-        } : {
+        style={{
           // Standard School Poster Coordinates (1080x1600) - FORCE CENTER ALIGNMENT
           left: '50%',
-          top: '59%', // Moved down to 59%
+          top: '59%', 
           width: 'auto',
           minWidth: '60%',
           transform: 'translateX(-50%)',
@@ -123,15 +77,29 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
             fontFamily: '"Montserrat", sans-serif',
             fontWeight: 550,
             whiteSpace: 'nowrap',
-            // Public poster (1080x1300) gets smaller fonts than School poster (1080x1600)
-            // UPDATE: Reducing School font sizes as well per user request
-            fontSize: isPublic
-              ? ((userData.fullName || 'Ram Kumar').length > 20 ? '12px' : (userData.fullName || 'Ram Kumar').length > 13 ? '16px' : '22px')
-              : ((userData.fullName || 'Ram Kumar').length > 20 ? '14px' : (userData.fullName || 'Ram Kumar').length > 13 ? '20px' : '24px')
+            fontSize: (userData.fullName || 'Ram Kumar').length > 20 ? '14px' : (userData.fullName || 'Ram Kumar').length > 13 ? '20px' : '24px'
           }}
         >
           {userData.fullName || 'Ram Kumar'}
         </h2>
+      </div>
+
+      {/* Layer 4: Logo Overlay (Bottom Footer) */}
+      <div 
+        className="absolute z-20 flex items-center justify-center"
+        style={{
+          bottom: '5%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '60%',
+          height: 'auto'
+        }}
+      >
+        <img 
+          src="/assets/poster_logo_overlay.png" 
+          alt="Initiative By" 
+          className="w-full h-auto object-contain"
+        />
       </div>
 
     </div >

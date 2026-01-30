@@ -13,7 +13,7 @@ interface UserFormProps {
 }
 
 export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBack, onContinue }) => {
-  const { selectedSchool, setCurrentSubmissionId } = useApp();
+  const { setCurrentSubmissionId } = useApp();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const cropperImageRef = useRef<HTMLImageElement>(null);
@@ -210,20 +210,7 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
 
           {/* Heading */}
           <div className="text-center mb-10 mt-2">
-            {selectedSchool && (
-              <div className="flex flex-col items-center mb-4 animate-fade-in">
-                <div className="w-48 h-24 flex items-center justify-center mb-4">
-                  {selectedSchool.logoUrl ? (
-                    <img src={selectedSchool.logoUrl} alt={selectedSchool.name} className="w-full h-full object-contain" />
-                  ) : (
-                    <span className="text-4xl">{selectedSchool.icon}</span>
-                  )}
-                </div>
-                <span className="text-sm font-bold text-saffron tracking-wider uppercase bg-saffron/5 px-3 py-1 rounded-full">
-                  {selectedSchool.name}
-                </span>
-              </div>
-            )}
+
             <h2 className="text-4xl font-display font-bold text-indiaNavy">
               Enter Details
             </h2>
