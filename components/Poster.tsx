@@ -36,10 +36,10 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       <div
         className="absolute rounded-lg overflow-hidden z-10 flex items-center justify-center bg-gray-100/50"
         style={{
-          // Adjusted: Extend 0.25% both sides (Left 2.25%, W 46.5%)
+          // Adjusted: Extend 0.35% to right (Left 2.25%, W 46.85%)
           left: '2.25%',
           top: '16.8%',
-          width: '46.5%',
+          width: '46.85%',
           height: '41%'
         }}
       >

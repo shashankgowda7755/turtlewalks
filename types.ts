@@ -86,6 +86,6 @@ export interface Pledge {
 
 export const FIXED_PLEDGE: Pledge = {
   id: 1,
-  text: 'I WILL RESPECT THE NATIONAL FLAG',
-  explanation: 'My Pledge to the Nation'
+  text: 'I PLEDGE TO PROTECT SEA TURTLES',
+  explanation: 'My Pledge to Marine Life'
 };
