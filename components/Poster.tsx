@@ -62,11 +62,11 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       <div
         className="absolute z-10 flex items-center justify-start text-left"
         style={{
-          // Aligned with 'HAFIZ KHAN' text area
-          left: '52%',
-          top: '18%', 
-          width: '45%',
-          height: 'auto'
+          // derived from 2.64x1.23in at 4.19,2.07 (Name Text Area)
+          left: '47.5%',
+          top: '15.9%', 
+          width: '30%',
+          height: '9.4%'
         }}
       >
         <h2
