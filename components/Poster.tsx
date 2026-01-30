@@ -36,11 +36,11 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       <div
         className="absolute rounded-lg overflow-hidden z-10 flex items-center justify-center bg-gray-100/50"
         style={{
-          // derived from 3.53x4.11in at 0.43,2.2 (assuming ~8.8in canvas width)
+          // Adjusted to be 'down wide and big' to cover background photo
           left: '4.9%',
           top: '16.8%',
-          width: '40%',
-          height: '31.5%'
+          width: '44%',
+          height: '45%'
         }}
       >
         {userData.photo ? (
@@ -62,11 +62,11 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
       <div
         className="absolute z-10 flex items-center justify-start text-left"
         style={{
-          // derived from 2.64x1.23in at 4.19,2.07 (Name Text Area)
-          left: '47.5%',
-          top: '15.9%', 
-          width: '30%',
-          height: '9.4%'
+          // Moved down to cover HAFIZ KHAN, wider and bigger
+          left: '52%',
+          top: '19%', 
+          width: '48%',
+          height: 'auto'
         }}
       >
         <h2
@@ -74,7 +74,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
           style={{
             fontFamily: '"Montserrat", sans-serif',
             fontWeight: 700,
-            fontSize: (userData.fullName || 'Ram Kumar').length > 20 ? '32px' : '40px',
+            fontSize: (userData.fullName || 'Ram Kumar').length > 20 ? '40px' : '55px',
             textShadow: '0px 2px 4px rgba(0,0,0,0.5)'
           }}
         >
