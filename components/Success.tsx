@@ -100,8 +100,11 @@ export const Success: React.FC<SuccessProps> = ({ userData, onReset }) => {
 
       document.body.appendChild(clone);
 
-      // Wait a moment for images in clone to resolve (sometimes needed for Safari)
-      await new Promise(resolve => setTimeout(resolve, 100));
+      // 2. Add Background Image (with cache busting)
+      const bgImg = new Image();
+      bgImg.crossOrigin = 'anonymous';
+      bgImg.src = '/assets/poster.png?v=2'; // Force refresh
+      await new Promise<void>((resolve, reject) => {setTimeout(resolve, 100);});
 
       // D. Render the Clone to an Image using html2canvas
       const canvas = await (window as any).html2canvas(clone, {

@@ -27,7 +27,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
 
       {/* Layer 1: Background Image */}
       <img
-        src="/assets/poster.png"
+        src="/assets/poster.png?v=2"
         className="absolute inset-0 w-full h-full object-cover"
         alt="Background"
       />
