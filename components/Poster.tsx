@@ -64,7 +64,7 @@ export const Poster: React.FC<PosterProps> = ({ id, userData, school, className 
         style={{
           // Shifted left and up to overlay 'HAFIZ KHAN' exactly
           left: '54%', 
-          top: '17.5%', 
+          top: '18.2%', 
           width: '40%',
           height: 'auto'
         }}
