@@ -11,6 +11,7 @@ export const GroupRegistrationForm: React.FC<GroupRegistrationFormProps> = ({ on
     phone: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,6 +93,20 @@ export const GroupRegistrationForm: React.FC<GroupRegistrationFormProps> = ({ on
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
             />
+          </div>
+
+          <div className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="groupAgeConfirm"
+              required
+              checked={ageConfirmed}
+              onChange={(e) => setAgeConfirmed(e.target.checked)}
+              className="mt-0.5 h-5 w-5 cursor-pointer accent-[#FF7F50]"
+            />
+            <label htmlFor="groupAgeConfirm" className="text-sm text-gray-600 cursor-pointer leading-tight">
+              I am 18 or older, or I am registering with the consent of a parent/guardian.
+            </label>
           </div>
 
           <button

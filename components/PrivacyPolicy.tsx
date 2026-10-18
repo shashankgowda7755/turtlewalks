@@ -121,6 +121,15 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onClose }) => {
 
                     <section className="space-y-3">
                         <h3 className="text-stone-900 font-bold text-lg flex items-center gap-2">
+                            <UserCheck size={18} className="text-green-500" /> Children and Guardian Consent
+                        </h3>
+                        <p className="text-sm leading-relaxed">
+                            Under the DPDP Act, 2023, a person under 18 is a child. If you are under 18, you may use this website only with the consent of your parent or legal guardian, and you confirm this by ticking the age/guardian box on the form. We do not track children, monitor their behaviour, or show them targeted advertising. A parent or guardian may ask us to access, correct or delete a child's data at any time using the contact details in the Contact and Grievance section.
+                        </p>
+                    </section>
+
+                    <section className="space-y-3">
+                        <h3 className="text-stone-900 font-bold text-lg flex items-center gap-2">
                             <Server size={18} className="text-indigo-500" /> 6. Data Storage, Retention and Security
                         </h3>
                         <p className="text-sm leading-relaxed text-justify">

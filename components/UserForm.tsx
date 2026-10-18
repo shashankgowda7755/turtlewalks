@@ -22,6 +22,7 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
 
   // Modal States
   const [showCamera, setShowCamera] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [showCropper, setShowCropper] = useState(false);
 
   // Temporary image storage for cropping
@@ -192,7 +193,8 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
       // lastName is optional
       emailRegex.test(userData.email.trim()) &&
       phoneRegex.test(userData.phone.trim()) &&
-      userData.photo !== '' // Photo Mandatory
+      userData.photo !== '' && // Photo Mandatory
+      ageConfirmed // 18+ or parent/guardian consent (DPDP Act 2023)
     );
   };
 
@@ -400,6 +402,20 @@ export const UserForm: React.FC<UserFormProps> = ({ userData, setUserData, onBac
                 <X size={16} /> {error}
               </div>
             )}
+
+            {/* Age / Guardian Consent (DPDP Act 2023 - minors) */}
+            <div className="flex items-start gap-3 mt-2 px-1">
+              <input
+                type="checkbox"
+                id="ageConfirm"
+                checked={ageConfirmed}
+                onChange={(e) => setAgeConfirmed(e.target.checked)}
+                className="mt-0.5 h-5 w-5 cursor-pointer accent-[#f97316]"
+              />
+              <label htmlFor="ageConfirm" className="text-sm text-slate-600 cursor-pointer select-none leading-tight">
+                I am 18 or older, or I am registering with the consent of my parent/guardian.
+              </label>
+            </div>
 
             {/* Privacy Consent */}
             <div className="flex items-start gap-3 mt-2 px-1">
